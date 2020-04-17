@@ -1,6 +1,6 @@
-name = "{{project-name}}"
+name = "crimson-leaf-b46a"
 type = "javascript"
-account_id = ""
+account_id = "900cb436a73ce695b35d2ce6f8051ab2"
 workers_dev = true
 route = ""
 zone_id = ""
