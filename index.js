@@ -55,10 +55,17 @@ async function handleRequest(request) {
   const obj = await response.json();
 
   const rand = Math.floor(Math.random() * 2);
-  const cookie = request.headers.get("cookie");
+  const cookies = request.headers.get("cookie");
 
+  let cookie = undefined;
   let variant = obj["variants"][rand];
   let source = "random";
+  
+  if (cookies) {
+    cookie = cookies.split("; ")
+    .find(cookie => cookie.includes("cfw-takehome"))
+  }
+
   if (cookie) {
     variant = cookie;
     source = "stored";
